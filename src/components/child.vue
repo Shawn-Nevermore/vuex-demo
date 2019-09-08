@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>我是全局属性account：{{ getAccount }}</p>
     <span>我是子组件</span>
     <div>来自父组件的message： {{ msg }}</div>
     <div>
@@ -25,6 +26,11 @@ export default {
   methods: {
     sendMsg2Parent() {
       this.$emit("handle", this.msg2Parent);
+    }
+  },
+  computed: {
+    getAccount() {
+      return this.$store.state.account;
     }
   }
 };

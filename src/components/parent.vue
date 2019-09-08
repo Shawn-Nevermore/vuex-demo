@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>我是全局属性account：{{ getAccount }}</p>
     <span>我是父组件</span>
     <p>儿子发来的微信：{{ data }}</p>
     <hr />
@@ -23,6 +24,11 @@ export default {
   methods: {
     getMsgFromChild(value) {
       this.data = value;
+    }
+  },
+  computed: {
+    getAccount() {
+      return this.$store.state.account;
     }
   }
 };
