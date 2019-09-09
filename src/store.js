@@ -4,13 +4,16 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  }
+    state: {
+        num: 88
+    },
+    mutations: {
+        increase(state) {
+            state.num++
+        },
+        decrease(state) {
+            state.num--
+        }
+    },
+    actions: {}
 })
