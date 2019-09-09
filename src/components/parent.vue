@@ -37,6 +37,11 @@ export default {
     getNum() {
       return this.$store.getters.getNum;
     }
+  },
+  computed: {
+    getAccount() {
+      return this.$store.state.account;
+    }
   }
 };
 </script>
