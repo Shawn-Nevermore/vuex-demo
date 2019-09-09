@@ -1,7 +1,7 @@
 <template>
   <div class="child">
     <p>全局属性count: {{ getNum }}</p>
-    <button @click="add">全局-1</button>
+    <button @click="add">全局-100</button>
     <span>我是子组件</span>
     <div>来自父组件的message： {{ msg }}</div>
     <div>

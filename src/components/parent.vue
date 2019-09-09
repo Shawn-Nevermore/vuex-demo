@@ -1,7 +1,8 @@
 <template>
   <div class="parent">
     <p>全局属性count: {{ getNum }}</p>
-    <button @click="add">全局+1</button>
+    <button @click="add">全局+100</button>
+    <button @click="increment">异步+100</button>
     <span>我是父组件</span>
     <p>儿子发来的微信：{{ data }}</p>
     <child :msg="message" @handle="getMsgFromChild"></child>
@@ -27,11 +28,14 @@ export default {
     },
     add() {
       this.$store.commit("increase");
+    },
+    increment() {
+      this.$store.dispatch("increment");
     }
   },
   computed: {
     getNum() {
-      return this.$store.state.num;
+      return this.$store.getters.getNum;
     }
   }
 };
